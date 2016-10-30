@@ -97,5 +97,25 @@ public class SwingCalculator extends JFrame {
         
         
     }
+    private class ListenForButton implements ActionListener{
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+             if(e.getSource() == button1){
+                 try{
+                     num1 = Double.parseDouble(textField1.getText());
+                     num2 = Double.parseDouble(textField1.getText());
+                 }catch(NumberFormatException excep){
+                   JOptionPane.showMessageDialog(SwingCalculator.this, "Please, enter right info",
+                           "Error",JOptionPane.ERROR_MESSAGE);
+                   System.exit(0);
+                 
+                 };                 
+             }
+        }
+        
+    
+    
+    }
     
 }
